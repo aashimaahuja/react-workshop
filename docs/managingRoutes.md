@@ -21,9 +21,9 @@ npm install react-router-dom
 Create a separate file `Router.js` where you define all your routes and then use in `App.jsx` file
 
 ```js file=Router.js
-import { Route, Routes } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
+import { Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
 
 function Router() {
   return (
@@ -43,7 +43,7 @@ export default Router;
 By separating the routes into their own file, you can keep your App.jsx file clean while Router.js file handles all the configurations of the routes.
 
 ```js
-import Router from "./Router";
+import Router from './Router';
 
 function App() {
   return (
@@ -67,11 +67,11 @@ You can create an array of route objects where each object represents a route wi
 ```js
 export const publicRoutes = [
   {
-    path: "/",
+    path: '/',
     element: React.createElement(Home),
   },
   {
-    path: "/about",
+    path: '/about',
     element: React.createElement(About),
   },
 ];
@@ -82,11 +82,11 @@ export const publicRoutes = [
 ```js
 export const adminRoutes = [
   {
-    path: "/",
+    path: '/',
     element: React.createElement(Admin),
   },
   {
-    path: "/emails",
+    path: '/emails',
     element: React.createElement(Emails),
   },
 ];
@@ -97,8 +97,8 @@ export const adminRoutes = [
 `App.jsx`
 
 ```js
-import { publicRoutes } from "./publicRoutes";
-import { adminRoutes } from "./adminRoutes";
+import { publicRoutes } from './publicRoutes';
+import { adminRoutes } from './adminRoutes';
 
 function App() {
   const router = createBrowserRouter([...publicRoutes, ...adminRoutes]);
