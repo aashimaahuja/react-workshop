@@ -17,7 +17,7 @@ With React snippets, you can use shortcuts to write React code. SOme useful shor
 
 ### Enabling automatic imports
 
-create jsconfig.json and add following lines
+Create `jsconfig.json` file and add following lines
 
 ```
 {
@@ -33,4 +33,4 @@ create jsconfig.json and add following lines
 
 ```
 
-Use `Cmd+.` or `Ctrl+.` to see suggestions
+Use `Cmd+.` or `Ctrl+.` to see suggestions.
