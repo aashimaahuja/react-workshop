@@ -1,0 +1,18 @@
+.email-card-container {
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  font-size: 14px;
+}
+.avatar {
+  color: #fff;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  margin-right: 8px;
+}
+
+.subject {
+  margin-bottom: 8px;
+}
