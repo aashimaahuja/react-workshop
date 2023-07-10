@@ -1,22 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { EmailCard } from '../../../../common/components/EmailCard/EmailCard';
 
-export const EmailList = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch('https://flipkart-email-mock.now.sh/')
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data.list);
-      });
-  }, []);
-
-  if (data == null) {
-    return;
-  }
+export const EmailListView = ({ data }) => {
   return (
     <ul className="grow">
       {data.map((item) => {
