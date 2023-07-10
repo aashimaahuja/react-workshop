@@ -1,21 +1,12 @@
 import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { EmailCard } from '../../../../common/components/EmailCard/EmailCard';
+import { useEmailList } from './useEmailList';
 
 export const EmailList = () => {
-  const [data, setData] = useState([]);
+  const { data, loading } = useEmailList();
 
-  useEffect(() => {
-    fetch('https://flipkart-email-mock.now.sh/')
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data.list);
-      });
-  }, []);
-
-  if (data == null) {
-    return;
+  if (loading) {
+    return <h1>Loading...</h1>;
   }
   return (
     <ul className="grow">
