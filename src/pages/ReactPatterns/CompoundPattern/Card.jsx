@@ -36,3 +36,7 @@ export const Card = ({ children }) => {
     </section>
   );
 };
+
+Card.Header = CardHeader;
+Card.Body = CardBody;
+Card.Footer = CardFooter;
