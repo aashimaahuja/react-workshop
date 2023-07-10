@@ -146,3 +146,29 @@ export const UserList = () => {
   );
 };
 ```
+
+---
+
+### Compound Pattern
+
+Compound pattern is commonly used in building complex UI components, like date-picker,dropdown menu, accordion etc when a component has multiple subcomponents.
+
+For example `Card` component has multiple subcomponents which needs to be separately imported
+
+```js
+<Card>
+  <CardHeader />
+  <CardBody />
+  <CardFooter />
+</Card>
+```
+
+> When importing a compound component, we don't have to explicitly import the child components that are available on that component.
+
+```js
+<Card>
+  <Card.Header />
+  <Card.Body />
+  <Card.Footer />
+</Card>
+```
