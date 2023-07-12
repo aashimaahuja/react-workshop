@@ -9,3 +9,5 @@ export const ExpensiveComponent = () => {
     </div>
   );
 };
+
+export const MemoisedExpensiveComponent = React.memo(ExpensiveComponent);
