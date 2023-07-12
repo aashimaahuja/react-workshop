@@ -74,3 +74,27 @@ const Parent = () => {
   );
 };
 ```
+
+### Solution 3
+
+Passing component as {children} prop.
+
+```js
+<ChildA>
+  <ChildB>
+</ChildA>
+```
+
+```js
+const ChildA = ({ children }) => {
+  const [color, setColor] = useState('red');
+  return (
+    <div onClick={setColor}>
+      // some code
+      {children}
+    </div>
+  );
+};
+```
+
+> Even when `ChildA` component's state changes, `ChildB` is not rerendered because its passed as `children` prop.
