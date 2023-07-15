@@ -107,6 +107,14 @@ const ChildA = ({ children }) => {
 
 **useMemo** memoises the computed value of the functions ensuring the value stays same during different rerenders.
 
+Even if the child component is memoised , it can still rerender if the props passed are not primitive values
+
+Because of Javascript equality doesn't hold the same for objects and functions
+
+{} != {}
+
+> So all the non primitive props need to be wrapped in useMemo or useCallback(if its a function)
+
 ```js
 const Parent = () => {
 
@@ -123,12 +131,19 @@ const Parent = () => {
 };
 ```
 
-Even if the child component is memoised , it can still rerender if the props passed are not primitive values
-
-Because of Javascript equality doesn't hold the same for objects and functions
-
-{} != {}
-
-> So all the non primitive props need to be wrapped in useMemo or useCallback(if its a function)
-
 ---
+
+> Reference of setter functions stay the same during rerenders. So if you are passing setter functions as props, they need not to be memoised.
+
+```js
+const Parent = () => {
+  const [value, setValue] = useState(0);
+
+  return (
+    <>
+      <ChildA />
+      <MemoedChildB value={value} setValue={setValue} />
+    </>
+  );
+};
+```
