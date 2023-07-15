@@ -8,7 +8,7 @@ const generateRandomNumber = () => {
 };
 
 export const CounterPerformanceExercise = () => {
-  const [count, setCount] = useState(generateRandomNumber());
+  const [count, setCount] = useState(() => generateRandomNumber());
   const incrementCount = () => {
     setCount((prevCount) => prevCount + 1);
   };
