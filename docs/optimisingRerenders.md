@@ -98,3 +98,20 @@ const ChildA = ({ children }) => {
 ```
 
 > Even when `ChildA` component's state changes, `ChildB` is not rerendered because its passed as `children` prop.
+
+---
+
+Wrap functions called by useState in an anonymous function
+
+**Wrong**
+
+```js
+const [color, setColor] = useState(generateRandomColor());
+```
+
+**Correct Way**
+
+```js
+const [color, setColor] = useState(() => generateRandomColor());
+const [color, setColor] = useState(generateRandomColor);
+```
