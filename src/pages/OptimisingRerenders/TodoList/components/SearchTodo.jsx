@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const SearchTodo = () => {
+const SearchTodo = () => {
   return (
     <div className="flex mb-2">
       <input
@@ -12,3 +12,6 @@ export const SearchTodo = () => {
     </div>
   );
 };
+
+const MemoedSearchTodo = React.memo(SearchTodo);
+export default MemoedSearchTodo;

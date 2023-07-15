@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-export const NewTodoItem = ({ addItem }) => {
+export const AddTodoItem = ({ addItem }) => {
   const [newTodo, setNewTodo] = useState('');
 
   const addNewTodo = () => {
@@ -27,3 +27,6 @@ export const NewTodoItem = ({ addItem }) => {
     </div>
   );
 };
+
+const MemoedAddTodoItem = React.memo(AddTodoItem);
+export default MemoedAddTodoItem;

@@ -45,3 +45,6 @@ export const TodoItem = ({ item, deleteItem, updateItem }) => {
     </li>
   );
 };
+
+const MemoedTodoItem = React.memo(TodoItem);
+export default MemoedTodoItem;
