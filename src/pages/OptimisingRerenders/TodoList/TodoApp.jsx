@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import React from 'react';
-import { NewTodoItem } from './components/NewTodoItem';
 import { TodoList } from './components/TodoList';
 import { SearchTodo } from './components/SearchTodo';
+import { AddTodoItem } from './components/AddTodoItem';
 
 const getInitialList = () => [
   {
@@ -61,7 +61,7 @@ export const TodoApp = () => {
   return (
     <main className="mt-8 flex flex-col items-center h-full">
       <section className="border-2 rounded-lg p-6 w-1/2 bg-white border-indigo-600 h-2/3">
-        <NewTodoItem addItem={addItem} />
+        <AddTodoItem addItem={addItem} />
         <SearchTodo />
         <TodoList
           todos={incompleteTodos}

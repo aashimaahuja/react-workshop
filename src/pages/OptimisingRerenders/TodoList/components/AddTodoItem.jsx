@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-export const NewTodoItem = ({ addItem }) => {
+export const AddTodoItem = ({ addItem }) => {
   const [newTodo, setNewTodo] = useState('');
 
   const addNewTodo = () => {
