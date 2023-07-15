@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Application as Counter } from './pages/OptimisingRerenders/Counter/Application';
-import { TodoApp } from './pages/OptimisingRerenders/TodoList/TodoApp';
+import { TodoApp } from './pages/OptimisingRerenders/TodoList/solution2/TodoApp';
 import { CardDemo } from './pages/ReactPatterns/CompoundPattern/CardDemo';
 import { EmailList } from './pages/ReactPatterns/HooksPattern/exercise/EmailList';
 
