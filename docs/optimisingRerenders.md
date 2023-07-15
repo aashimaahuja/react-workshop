@@ -98,3 +98,37 @@ const ChildA = ({ children }) => {
 ```
 
 > Even when `ChildA` component's state changes, `ChildB` is not rerendered because its passed as `children` prop.
+
+---
+
+### Improving re-renders using useCallback and useMemo
+
+**useCallback** memoises the functions ensuring function reference stays same during rerenders of a component.
+
+**useMemo** memoises the computed value of the functions ensuring the value stays same during different rerenders.
+
+```js
+const Parent = () => {
+
+  const callbackFn = useCallback(() => {...}, [])
+
+  const value = useMemo(() => {}, [])
+
+  return (
+    <>
+      <ChildA />
+      <MemoedChildB value={value} callback={callbackFn}/>
+    </>
+  );
+};
+```
+
+Even if the child component is memoised , it can still rerender if the props passed are not primitive values
+
+Because of Javascript equality doesn't hold the same for objects and functions
+
+{} != {}
+
+> So all the non primitive props need to be wrapped in useMemo or useCallback(if its a function)
+
+---
