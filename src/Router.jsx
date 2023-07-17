@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ContextDemo } from './pages/ContextDemo/ContextDemo';
 import { Application as Counter } from './pages/OptimisingRerenders/Counter/Application';
 import { TodoApp } from './pages/OptimisingRerenders/TodoList/solution2/TodoApp';
 import { CardDemo } from './pages/ReactPatterns/CompoundPattern/CardDemo';
@@ -18,6 +19,7 @@ export const Router = () => {
         <Route path="/card" element={<CardDemo />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/todoApp" element={<TodoApp />} />
+        <Route path="/contextDemo" element={<ContextDemo />} />
       </Routes>
     </BrowserRouter>
   );
