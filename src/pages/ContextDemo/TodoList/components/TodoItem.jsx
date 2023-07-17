@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { deleteItem, updateItem } from '../TodoList/lib/utils';
+import { deleteItem, updateItem } from '../lib/utils';
 
 export const TodoItem = ({ item, setTodos }) => {
   const isCompleted = item.isCompleted;
