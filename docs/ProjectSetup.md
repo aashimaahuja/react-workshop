@@ -50,7 +50,7 @@ You can define eslint configuration for a project in `.eslintrc.json` . You can 
 
 ---
 
-Installing prettier
+**Installing prettier**
 
 - npm install --save-dev --save-exact prettier
 - create .prettierrc.json file, add `{"singleQuote": true }`
