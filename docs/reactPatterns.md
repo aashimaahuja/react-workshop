@@ -44,7 +44,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { UserListView } from './UserList.view';
 
-export const EmailListContainer = () => {
+export const UserListContainer = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
