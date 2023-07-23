@@ -1,26 +1,10 @@
-import React, { useCallback, useState } from 'react';
-import { useEffect } from 'react';
+import React from 'react';
+import { useHttp } from '../hooks/useHttp';
 
 export const Posts = () => {
-  const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const fetchPosts = useCallback(() => {
-    setIsLoading(true);
-    fetch('https://jsonplaceholder.typicode.com/user/1/posts/')
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Something went wrong. Please try again later !');
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setPosts(data);
-        setIsLoading(false);
-      });
-  }, []);
-
-  useEffect(() => fetchPosts(), [fetchPosts]);
+  const { data: posts, isLoading } = useHttp(
+    'https://jsonplaceholder.typicode.com/user/1/posts/',
+  );
 
   return (
     <section className="border rounded-lg border-slate-300 bg-white p-4 mr-4 grow">
