@@ -1,7 +1,14 @@
 ## Create routes using an array
 
-Create a new file `routes.js`
-Include routes in for Home page and About Page in an array
+Create two files `publicRoutes.js` and `adminRoutes.js`
+Public routes should contain the routes `/home` and `/about`.
+Admin routes should contain routes `/admin` and `/emails`
+
+Include routes in App.jsx
+`/home` should display text **Home Page**
+`/about` -> **About Page**
+`/admin` -> **Admin Page**
+`/emails` -> **Email Page**
 
 ```js
 const routes = [
