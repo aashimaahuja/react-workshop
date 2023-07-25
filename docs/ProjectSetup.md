@@ -37,9 +37,16 @@ Install following packages
 
 You can define eslint configuration for a project in `.eslintrc.json` . You can specify rules that ESLint will apply when analysing the code
 
+**Add Airbnb eslint config**
+
+`npm install -g install-peerdeps
+install-peerdeps --dev eslint-config-airbnb`
+
+Add `"extends" : ["airbnb", "airbnb/hooks"]` to your `.eslintrc`
+
 **Some useful eslint rules**
 
-- react-in-jsx-scope
+- react/react-in-jsx-scope
 - react/jsx-uses-react
 
 > Before React 17, it was important to import React in a jsx file because browser doesn't understand jsx out of the box. Babel would transpile it as React.createElement. It would throw an error if react is not imported.
@@ -64,6 +71,8 @@ To prettify all files use command
 ---
 
 **Husky**
+
+**Husky** allows developers to set up and manage pre-commit and pre-push Git hooks easily. Hooks are scripts that run automatically at specific points during the Git workflow. For example, before a commit is made or before pushing changes to a remote repository.
 
 No more bad commits... :)
 
