@@ -16,3 +16,15 @@ body {
   height: 100%;
   margin: 0 auto;
 }
+
+.header {
+  height: 50px;
+  background-color: black;
+  width: 100vw;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  font-size: 18px;
+  font-weight: 500;
+}
