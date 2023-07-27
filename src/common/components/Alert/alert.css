@@ -1,0 +1,56 @@
+.alert {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 6px 16px;
+    box-shadow: none;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+  }
+  
+  .alert--title,
+  .alert--description {
+    margin: 0;
+  }
+  
+  .alert--success {
+    background-color: #edf7ed;
+    color: rgb(30, 70, 32);
+  }
+  .alert--error {
+    color: rgb(95, 33, 32);
+    background-color: rgb(253, 237, 237);
+  }
+  .alert--warning {
+    background-color: #fff3e5;
+    color: rgb(102, 60, 0);
+  }
+  .alert--info {
+    background-color: #e5f5fd;
+    color: rgb(30, 70, 32);
+  }
+  
+  .alert--outlined {
+    background-color: transparent;
+    border-radius: 4px;
+  }
+  
+  .alert--success.alert--outlined {
+    border: 1px solid rgb(76, 175, 80);
+  }
+  
+  .alert--warning.alert--outlined {
+    border: 1px solid rgb(255, 152, 0);
+  }
+  
+  .alert--error.alert--outlined {
+    border: 1px solid rgb(239, 83, 80);
+  }
+  .alert--info.alert--outlined {
+    border: 1px solid rgb(3, 169, 244);
+  }
+  
