@@ -1,7 +1,9 @@
 ### Productivity Hacks
 
-Install extension
-<b>React Snippets (ES7 version) extension</b>
+Install extensions
+
+- <em>React Snippets (ES7 version) extension</em>
+- <em>Simple React Snippets</em>
 
 With React snippets, you can use shortcuts to write React code. SOme useful shortcuts are
 
