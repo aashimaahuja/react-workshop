@@ -1,15 +1,19 @@
 import React from 'react';
-import { Header } from './common/components/Header';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { publicRoutes } from './routes/publicRoutes';
 import { adminRoutes } from './routes/adminRoutes';
+import { Layout } from './common/components/Layout';
 
 function App() {
-  const router = createBrowserRouter([...publicRoutes, ...adminRoutes]);
+  const router = createBrowserRouter([
+    {
+      element: <Layout />,
+      children: [...publicRoutes, ...adminRoutes],
+    },
+  ]);
   return (
     <div>
-      <Header />
       <RouterProvider router={router} />
     </div>
   );
