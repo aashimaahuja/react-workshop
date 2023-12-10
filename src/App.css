@@ -1,4 +1,5 @@
 body {
+  font-family: Inter;
   background: var(--bg-color-primary);
   height: 100vh;
   margin: 0;
