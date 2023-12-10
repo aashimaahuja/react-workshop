@@ -21,3 +21,4 @@ const routes = [
 ```
 
 Include these routes in your `App.jsx` file.
+Add Admin and Emails Tab in header
