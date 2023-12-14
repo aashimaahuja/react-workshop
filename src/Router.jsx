@@ -1,27 +1,13 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Application as Counter } from './pages/OptimisingRerenders/Counter/Application';
-import { CounterPerformanceExercise } from './pages/OptimisingRerenders/Counter/exercise/CounterPerformanceExercise';
-import { CardDemo } from './pages/ReactPatterns/CompoundPattern/CardDemo';
-import { EmailList } from './pages/ReactPatterns/HooksPattern/exercise/EmailList';
-
-const Home = () => <h1>Home Page</h1>;
-const About = () => <h1>About Page</h1>;
+import { Routes, Route } from 'react-router-dom';
+import { CounterApp } from './CounterApp';
+import { CounterPerformanceExercise } from './exercise/CounterPerformanceExercise';
 
 export const Router = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/email-list" element={<EmailList />} />
-        <Route path="/card" element={<CardDemo />} />
-        <Route path="/counter" element={<Counter />} />
-        <Route
-          path="/counterExercise"
-          element={<CounterPerformanceExercise />}
-        />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<CounterApp />} />
+      <Route path="/counterExercise" element={<CounterPerformanceExercise />} />
+    </Routes>
   );
 };

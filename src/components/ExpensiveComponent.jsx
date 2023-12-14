@@ -1,5 +1,5 @@
 import React from 'react';
-import { block } from '../../../../lib/sleep';
+import { block } from '../lib/sleep';
 
 export const ExpensiveComponent = () => {
   block(500);

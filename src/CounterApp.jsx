@@ -18,11 +18,12 @@ const Counter = ({ count, incrementCount }) => {
   );
 };
 
-export const Application = () => {
+export const CounterApp = () => {
   const [count, setCount] = useState(0);
   const incrementCount = () => {
     setCount((prevCount) => prevCount + 1);
   };
+
   return (
     <main className="m-4 flex flex-col items-center">
       <Counter count={count} incrementCount={incrementCount} />
