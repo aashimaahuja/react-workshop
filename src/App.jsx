@@ -1,15 +1,9 @@
 import React from 'react';
-import { Router } from './Router';
-import { Header } from './common/components/Header';
 import './App.css';
+import { List } from './components/List';
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <Router />
-    </div>
-  );
+  return <List />;
 }
 
 export default App;

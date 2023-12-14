@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { MemoedIdKeyItem } from './components/IdKeyItem';
-import { MemoedIndexKeyItem } from './components/IndexKeyItem';
+import { MemoedIdKeyItem } from './IdKeyItem';
+import { MemoedIndexKeyItem } from './IndexKeyItem';
 
 export const ListSortingDemo = () => {
   const values = [1, 2, 3];

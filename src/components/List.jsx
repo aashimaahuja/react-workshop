@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { ListItem } from './components/ListItem';
+import { ListItem } from './ListItem';
 import { ListSortingDemo } from './ListSortingDemo';
 
 export const IndexKeyList = () => {
