@@ -4,9 +4,7 @@ import { AddTodo } from './AddTodo';
 import { TodoListNav } from './TodoListNav';
 
 export const TodoList = () => {
-  const { isLoading, get, post } = useHttp(
-    'https://jsonplaceholder.typicode.com',
-  );
+  const { isLoading, get } = useHttp('https://jsonplaceholder.typicode.com');
   const [todos, setTodos] = useState([]);
   const [activeTab, setActiveTab] = useState('userTodos');
   const [input, setInput] = useState('');
@@ -43,11 +41,17 @@ export const TodoList = () => {
         userId: 1,
       },
     };
-    const newTodo = await post('/todos', options);
+
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos', {
+      method: 'POST',
+      body: JSON.stringify(options.body),
+      headers: options.headers,
+    });
+    const newTodo = await response.json();
 
     setTodos([...todos, newTodo]);
     setInput('');
-  }, [post, todos, input]);
+  }, [todos, input]);
 
   return (
     <main className="border rounded-lg border-slate-300 bg-white p-4 mr-4 w-1/2">
