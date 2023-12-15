@@ -82,9 +82,27 @@ No more bad commits... :)
 
 **Installing husky**
 
-1. npm install husky --save-dev
-2. Add `prepare="husky install"` in `package.json`
+1. `npm install husky --save-dev`
+2. Add `prepare:"husky install"` in `package.json`
 3. Run command `npm run prepare`
 4. `npm install lint-staged --save-dev`
 5. Add husky config in package.json
+
+
+```
+"husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,md,json}": [
+      "npx prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx}": "npm run lint"
+  }
+
+```
+
 6. `npx husky add .husky/pre-commit "npx lint-staged"`
