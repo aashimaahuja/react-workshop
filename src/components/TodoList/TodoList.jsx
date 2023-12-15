@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useHttp } from '../hooks/useHttp';
 import { AddTodo } from './AddTodo';
 import { TodoListNav } from './TodoListNav';
 
 export const TodoList = () => {
   const { isLoading, get, post } = useHttp(
-    'https://jsonplaceholder.typicode.com/user/1/todos/',
+    'https://jsonplaceholder.typicode.com',
   );
   const [todos, setTodos] = useState([]);
   const [activeTab, setActiveTab] = useState('userTodos');
@@ -17,31 +17,33 @@ export const TodoList = () => {
 
   const fetchTodos = useCallback(async () => {
     setActiveTab('userTodos');
-    const todos = await get(
-      'https://jsonplaceholder.typicode.com/user/1/todos/',
-    );
+    const todos = await get('/user/1/todos/');
     setTodos(todos);
   }, [get]);
 
   const fetchAllTodos = useCallback(async () => {
     setActiveTab('allTodos');
-    const todos = await get('https://jsonplaceholder.typicode.com/todos/');
+    const todos = await get('/todos/');
     setTodos(todos);
   }, [get]);
 
+  useEffect(() => {
+    fetchAllTodos();
+  }, [fetchAllTodos]);
+
   const addTodo = useCallback(async () => {
-    const newTodo = await post(
-      `https://jsonplaceholder.typicode.com/todos`,
-      new Headers({
+    const options = {
+      headers: new Headers({
         'Content-Type': 'application/json',
       }),
-      {
+      body: {
         completed: false,
         id: todos.length + 1,
         title: input,
         userId: 1,
       },
-    );
+    };
+    const newTodo = await post('/todos', options);
 
     setTodos([...todos, newTodo]);
     setInput('');
