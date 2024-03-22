@@ -18,7 +18,8 @@
 2. Name your project
 3. Select framework ‘React’
 4. Select variant (javascript/ typescript)
-5. npm install && npm run dev
+5. Go to the project directory and run commands:
+   `npm install && npm run dev`
 6. Voila!
 
 ---
@@ -37,13 +38,6 @@ Install following packages
 
 You can define eslint configuration for a project in `.eslintrc.json` . You can specify rules that ESLint will apply when analysing the code
 
-**Add Airbnb eslint config**
-
-`npm install -g install-peerdeps
-install-peerdeps --dev eslint-config-airbnb`
-
-Add `"extends" : ["airbnb", "airbnb/hooks"]` to your `.eslintrc`
-
 **Some useful eslint rules**
 
 - react/react-in-jsx-scope
@@ -51,22 +45,23 @@ Add `"extends" : ["airbnb", "airbnb/hooks"]` to your `.eslintrc`
 
 > Before React 17, it was important to import React in a jsx file because browser doesn't understand jsx out of the box. Babel would transpile it as React.createElement. It would throw an error if react is not imported.
 
-- react-hooks/exhaustive-deps
-- no-array-index-key
-- react/prop-types
+**Add Airbnb eslint config**
 
----
+`npm install -g install-peerdeps
+install-peerdeps --dev eslint-config-airbnb`
+
+## Add `"extends" : ["airbnb", "airbnb/hooks"]` to your `.eslintrc`
 
 **Installing prettier**
 
 - npm install --save-dev --save-exact prettier
 - create .prettierrc.json file, add `{"singleQuote": true }`
-- create .prettierignore file, add node_modules
 - Set VScode default formatter to prettier and turn of format on save option.
-
-To prettify all files use command
-
-`npx prettier . --write`
+- To prettify all files use command
+  `npx prettier . --write`
+- create .prettierignore file, add node_modules
+- Add prettier command in scripts in package.json
+  `"prettier": npx prettier . --write`
 
 ---
 
@@ -82,12 +77,9 @@ No more bad commits... :)
 
 **Installing husky**
 
-1. `npm install husky --save-dev`
-2. Add `prepare:"husky install"` in `package.json`
-3. Run command `npm run prepare`
-4. `npm install lint-staged --save-dev`
-5. Add husky config in package.json
-
+1. `npx husky-init && npm install`
+2. `npm install lint-staged --save-dev`
+3. Add husky config in package.json
 
 ```
 "husky": {
