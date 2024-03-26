@@ -12,9 +12,5 @@ export const EmailListContainer = () => {
       });
   }, []);
 
-  if (data == null) {
-    return;
-  }
-
   return <EmailListView data={data} />;
 };

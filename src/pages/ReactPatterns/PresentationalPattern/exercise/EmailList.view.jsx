@@ -2,6 +2,10 @@ import React from 'react';
 import { EmailCard } from '../../../../common/components/EmailCard/EmailCard';
 
 export const EmailListView = ({ data }) => {
+  if (!data.length) {
+    return <></>;
+  }
+
   return (
     <ul className="grow">
       {data.map((item) => {
