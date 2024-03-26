@@ -1,6 +1,6 @@
 import React from 'react';
-import { Home } from '../common/components/Home';
-import { About } from '../common/components/About';
+import { Home } from '../pages/Home';
+import { About } from '../pages/About';
 
 export const publicRoutes = [
   { path: '/', element: React.createElement(Home) },

@@ -24,6 +24,16 @@ export const Header = () => {
           About
         </Link>
       </span>
+      <span style={{ color: 'white' }}>
+        <Link to="/emails" style={{ textDecoration: 'none', color: 'white' }}>
+          Emails
+        </Link>
+      </span>
+      <span style={{ color: 'white' }}>
+        <Link to="/admin" style={{ textDecoration: 'none', color: 'white' }}>
+          Admin
+        </Link>
+      </span>
     </div>
   );
 };
