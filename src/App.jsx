@@ -1,13 +1,13 @@
 import React from 'react';
-import { Router } from './Router';
 import { Header } from './common/components/Header';
 import './App.css';
+import { TodoApp } from './pages/OptimisingRerenders/TodoList/TodoApp';
 
 function App() {
   return (
     <div>
       <Header />
-      <Router />
+      <TodoApp />
     </div>
   );
 }
