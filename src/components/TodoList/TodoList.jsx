@@ -3,10 +3,10 @@ import { useHttp } from '../hooks/useHttp';
 
 export const TodoList = () => {
   const [todos, setTodos] = useState([]);
-  const { isLoading, get } = useHttp('https://jsonplaceholder.typicode.com');
+  const { isLoading, get } = useHttp();
 
   const fetchAllTodos = useCallback(async () => {
-    const todos = await get('/todos/');
+    const todos = await get('https://jsonplaceholder.typicode.com/todos/');
     setTodos(todos);
   }, [get]);
 
