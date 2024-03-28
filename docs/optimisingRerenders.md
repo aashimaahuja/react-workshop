@@ -1,5 +1,24 @@
 ### Optimising rerenders
 
+<b>What is Rerendering?</b>
+
+Browser painting stuff on the screen to display it to the user.
+
+<b>Two Stages</b>
+
+- Initial Render - When a component on the screen for the first time.
+- Re-render - When the existing component updates due to some user interaction
+
+![alt text](../src/assets/image.png)
+
+![alt text](../src/assets/image-1.png)
+
+<b>When does a component rerender?</b>
+
+1. When there is a change in state
+
+2. When the parent component rerendrs
+
 Whenever there is a state update, react does a rerender. If the parent rerenders , all of the its children are rendered as well regardless of whether their own props have changed or not.
 
 ![child rerender image](../src/assets/rerenderDOMTree.jpg)
