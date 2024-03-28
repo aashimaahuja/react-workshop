@@ -20,16 +20,5 @@ export const useHttp = (baseUrl) => {
     [baseUrl],
   );
 
-  const post = useCallback(
-    (url, options) => {
-      return fetch(`${baseUrl}${url}`, {
-        method: 'POST',
-        body: JSON.stringify(options.body),
-        headers: options.headers,
-      }).then((res) => res.json());
-    },
-    [baseUrl],
-  );
-
-  return { isLoading, error, get, post };
+  return { isLoading, error, get };
 };

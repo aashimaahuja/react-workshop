@@ -1,32 +1,21 @@
-import React from 'react';
-import { useTodoList } from '../hooks/useTodoList';
-import { AddTodo } from './AddTodo';
-import { TodoListNav } from './TodoListNav';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useHttp } from '../hooks/useHttp';
 
 export const TodoList = () => {
-  const {
-    addTodo,
-    input,
-    handleInputChange,
-    fetchTodos,
-    fetchAllTodos,
-    activeTab,
-    isLoading,
-    todos,
-  } = useTodoList();
+  const [todos, setTodos] = useState([]);
+  const { isLoading, get } = useHttp('https://jsonplaceholder.typicode.com');
+
+  const fetchAllTodos = useCallback(async () => {
+    const todos = await get('/todos/');
+    setTodos(todos);
+  }, [get]);
+
+  useEffect(() => {
+    fetchAllTodos();
+  }, [fetchAllTodos]);
 
   return (
     <main className="border rounded-lg border-slate-300 bg-white p-4 mr-4 w-1/2">
-      <AddTodo
-        addTodo={addTodo}
-        inputValue={input}
-        handleInputChange={handleInputChange}
-      />
-      <TodoListNav
-        fetchTodos={fetchTodos}
-        fetchAllTodos={fetchAllTodos}
-        activeTab={activeTab}
-      />
       <section className="grow">
         <h1 className="font-bold">Todos</h1>
         {isLoading ? (
