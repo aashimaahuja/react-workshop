@@ -1,8 +1,11 @@
 import { useCallback, useState } from 'react';
 
-export const useHttp = (baseUrl) => {
+export const useHttp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  // @ts-ignore
+  const baseUrl = import.meta.env.VITE_BASE_URL;
 
   const get = useCallback(
     (url) => {
@@ -20,5 +23,16 @@ export const useHttp = (baseUrl) => {
     [baseUrl],
   );
 
-  return { isLoading, error, get };
+  const post = useCallback(
+    (url, options) => {
+      return fetch(`${baseUrl}${url}`, {
+        method: 'POST',
+        body: JSON.stringify(options.body),
+        headers: options.headers,
+      }).then((res) => res.json());
+    },
+    [baseUrl],
+  );
+
+  return { isLoading, error, get, post };
 };

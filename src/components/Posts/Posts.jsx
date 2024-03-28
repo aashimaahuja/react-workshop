@@ -4,7 +4,7 @@ import { useHttp } from '../hooks/useHttp';
 
 export const Posts = () => {
   const [posts, setPosts] = useState([]);
-  const { isLoading, get } = useHttp('https://jsonplaceholder.typicode.com/');
+  const { isLoading, get } = useHttp();
 
   const fetchPosts = useCallback(async () => {
     const posts = await get('/user/1/posts');
