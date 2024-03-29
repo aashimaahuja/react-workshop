@@ -47,8 +47,7 @@ You can define eslint configuration for a project in `.eslintrc.json` . You can 
 
 **Add Airbnb eslint config**
 
-`npm install -g install-peerdeps
-install-peerdeps --dev eslint-config-airbnb`
+`npm i eslint-config-airbnb`
 
 ## Add 
 `"extends" : ["airbnb", "airbnb/hooks"]` to your `.eslintrc`
