@@ -59,7 +59,7 @@ Add `"extends" : ["airbnb", "airbnb/hooks"]` to your `.eslintrc`
 
 **Installing prettier**
 
-- npm install --save-dev --save-exact prettier
+- npm install --save-dev prettier
 - create .prettierrc.json file, add `{"singleQuote": true }`
 - create .prettierignore file, add node_modules
 - Set VScode default formatter to prettier and turn of format on save option.
